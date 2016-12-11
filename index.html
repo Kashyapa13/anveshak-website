@@ -45,32 +45,48 @@
            </div>
 
           <div class="container-fluid" style="text-align:center;" >
-             <div class="container-fluid" style="display:block;" ng-mouseenter="flag = 0" ng-mouseleave = "flag = 1">
-                <img src="images/profile.png" class="img-circle" alt="Cinque Terre" width="200" height="200">
-                <p id="name">profile</p>
+            <div class="container-fluid" style="text-align:center;">
+                <div class="col-sm-12" style="display:block;padding:0;margin:0;" ng-mouseenter="option = 0" ng-mouseleave = "option = 1">
+                   <img src="images/profile.png" class="img-circle" alt="Cinque Terre" width="200" height="200">
+                   <p id="name">Profile</p>
+                  <div ng-show="option == 0" class ="panel panel-primary" style="background-color:rgba(200, 200, 200, 0.5);   min-height:200px;width:100%; z-index:1;top:0;position:absolute;margin:0;padding:0;">
+                    <div class="panel-body" style="font-size:20px;">
+                      <label><strong>Module:</strong>Module</label><br>
+                      <label><strong>Description:</strong>Description</label>
+                    </div>
+                    <hr>
+
+                    <div class="container-fluid contact" style="text-align:center;">
+                      <ul class="list-inline" style="font-size:30px;">
+                        <li><a href="{[{col.tlink}]}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{[{col.flink}]}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{[{col.glink}]}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>   
              </div>
           </div>
 
 
-           <div class="container" ng-repeat="rows in teamMembers">
-             <div class="col-sm-4" style="text-align:center;" ng-repeat="col in rows">
-                <div class="container-fluid" style="display:block;" ng-mouseenter="flag = 0" ng-mouseleave = "flag = 1">
+           <div class="container" ng-repeat="rows in teamMembers" style="margin:0;padding:0;">
+             <div class="col-sm-4" style="text-align:center;margin:0;padding:0;" ng-repeat="col in rows">
+                <div class="container-fluid" style="display:block;padding:0;margin:0;" ng-mouseenter="flag = 0" ng-mouseleave = "flag = 1">
                    <img src="images/profile.png" class="img-circle" alt="Cinque Terre" width="200" height="200">
                    <p id="name">{[{col.name}]}</p>
-                  <div ng-show="flag == 0" class ="panel panel-primary" style="background-color:rgba(200, 200, 200, 0.5); min-height:100px;z-index:1;">
-                    <div class="panel-body" style="font-size:20px;
-                    ">
+                  <div ng-show="flag == 0" class ="panel panel-primary" style="background-color:rgba(200, 200, 200, 0.5);   min-height:200px;width:100%; z-index:1;top:0;position:absolute;margin:0;padding:0;">
+                    <div class="panel-body" style="font-size:20px;">
                       <label><strong>Module:</strong>{[{col.module}]}</label><br>
                       <label><strong>Description:</strong>{[{col.description}]}</label>
                     </div>
                     <hr>
 
                     <div class="container-fluid contact" style="text-align:center;">
-                        <ul class="list-inline" style="font-size:30px;">
-                            <li><a href="{[{col.tlink}]}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="{[{col.flink}]}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="{[{col.glink}]}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
+                      <ul class="list-inline" style="font-size:30px;">
+                        <li><a href="{[{col.tlink}]}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{[{col.flink}]}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{[{col.glink}]}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -81,68 +97,28 @@
          </div>
    </section>
 
-   <section id="gallery" style="padding-top:40px;padding-bottom:40px;">
-       <div class="container" >
-            <div class="section-heading">
-               <h2 style="text-align:center;">Gallery</h2>
-               <hr>
-            </div>
+   <section id="gallery" style="padding-top:40px;padding-bottom:80px;">
+       <div class="container" style="">
+          <div class="section-heading">
+            <h2 style="text-align:center;">Gallery</h2>
+            <hr>
+          </div><br><br>
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel" data-slide-to="1"></li>
+              <li data-target="#carousel" data-slide-to="2"></li>
+              <li data-target="#carousel" data-slide-to="3"></li>
+            </ol>
 
-            <div class="container-fluid" style="margin:40px 0;">
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" ><img src="images/rover.jpg" alt="Chania"></div>
+              <div class="item"><img src="images/1.jpg" alt="Chania"></div>
+              <div class="item"><img src="images/2.jpg" alt="Chania" ></div>
+              <div class="item"><img src="images/3.jpg" alt="Chania" ></div>
             </div>
-
-            <div class="container-fluid" style="margin:40px 0;">
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-            </div>
-
-            <div class="container-fluid" style="margin:40px 0;">
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="container-fluid" style="display:block;">
-                     <img src="images/rover.jpg" class="img-thumbnail" alt="Cinque Terre">
-                  </div>
-                </div>
-            </div>
-       </div>
-
+          </div>
+        </div>
    </section>
 
 
@@ -175,6 +151,9 @@
                         <div class="container" id="location" style="padding:40px;">
                             <a href="https://www.google.co.in/maps/place/Indian+Institute+of+Technology+Madras/" target="_blank" style="text-decoration:None;"><span style="font-size:20px;"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" style="color:red;font-size:50px;"></i><strong>Indian Institute Of Technology(IIT) Madras</strong></span></a>
                         </div>
+                        <div class="container-fluid">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15550.813889683162!2d80.2339031!3d12.9908081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51d03851a6fd690d!2sIndian+Institute+of+Technology+Madras!5e0!3m2!1sen!2sin!4v1481430400080" width="600" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
                         <div class="container" id="call" style="padding:0 40px;">
                             <span style="font-size:30px;"><i class="fa fa-phone" aria-hidden="true" style="color:blue;font-size:50px;margin:20px;"></i><strong>9999999999</strong></span>
                         </div>
@@ -198,4 +177,9 @@
   </section>
   <script type="text/javascript" src="Scripts/base.js"></script>
   </body>
+  <footer style="background-color:black;">
+        <div class="container" style="text-align:center;color:white;">
+            <p><strong>&copy;2016 Anveshak. All Rights Reserved.</p></strong>
+        </div>
+    </footer>
  </html>
